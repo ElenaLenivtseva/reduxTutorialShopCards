@@ -25,9 +25,16 @@ const ProductDetail = () => {
   return (
     <div className='ui grid container'>
       <div className="ui placeholder segment">
-      <div className="ui placeholder segment"></div>
+    {Object.keys(product).length === 0 ? (
+      <div>...loading</div>
+    ): (
+      <div className='ui placeholder segment'>
+          <img src={image} alt={title}/>
+          <h1>{title}</h1>
+          <p>price: {price} $</p>
+          <p> {description} $</p>
       </div>
-      <h1>ProductDetail</h1>
+    )}
     </div>
   );
 };
